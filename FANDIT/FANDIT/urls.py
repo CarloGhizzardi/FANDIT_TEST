@@ -20,6 +20,7 @@ from drf_yasg import openapi
 
 
 
+
 schema_view = get_schema_view(
    openapi.Info(
       title="Fandit Zoo L.L.C.",
@@ -40,5 +41,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redocs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('Users/', include('users.API.routers'))
+    path('user/', include('users.api.routers')),
+
 ]

@@ -1,7 +1,7 @@
 from django.urls import path
-from users.API.views import RegisterUserView
+from users.api.views import RegisterUserView
 
-urlpatterns= {
+urlpatterns= [
     path('auth/register', RegisterUserView.as_view()),
 
-}
+]
