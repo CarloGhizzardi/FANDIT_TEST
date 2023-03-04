@@ -1,3 +1,5 @@
 from django.contrib import admin
+from animal.models import animal
 
-# Register your models here.
+class AnimalAdmin(admin.ModelAdmin):
+    list_display=['common_name', 'family']
