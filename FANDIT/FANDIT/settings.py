@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'drf_yasg',
     'users',
     'zoo',
-    
+    'animal',
+    'family',
+        
 ]
 
 MIDDLEWARE = [
