@@ -18,6 +18,7 @@ from django.urls import path, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from family.api.routers import router_family
+from animal.api.routers import router_animal
 
 
 
@@ -44,5 +45,6 @@ urlpatterns = [
     path('redocs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('user/', include('users.api.routers')),
     path('family/', include(router_family.urls)),
+    path('animal/', include(router_animal.urls)),
 
 ]
