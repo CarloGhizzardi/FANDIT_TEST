@@ -1,6 +1,5 @@
 from django.db import models
 from family.models import Family
-from zoo.models import Zoo
 
 
 
