@@ -1,5 +1,6 @@
 from django.contrib import admin
-#from animal.models import Animal
+from animal.models import Animal
 
-#class AnimalAdmin(admin.ModelAdmin):
- #   list_display=['common_name', 'family']
+@admin.register(Animal)
+class AnimalAdmin(admin.ModelAdmin):
+    list_display=['common_name']
