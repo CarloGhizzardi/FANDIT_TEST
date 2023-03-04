@@ -1,3 +1,7 @@
 from django.contrib import admin
+from zoo.models import Zoo
 
-# Register your models here.
+@admin.register(Zoo)
+class ZooAdmin(admin.ModelAdmin):
+    list_display=['name', 'city', 'country']
+
