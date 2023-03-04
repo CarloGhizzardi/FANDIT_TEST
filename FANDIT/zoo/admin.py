@@ -1,7 +1,11 @@
 from django.contrib import admin
-from zoo.models import Zoo
+from zoo.models import Zoo, AnimalRegistration
+from animal.models import Animal
 
-@admin.register(Zoo)
-class ZooAdmin(admin.ModelAdmin):
-    list_display=['name', 'city', 'country']
+
+
+
+
+#@admin.register(Zoo)
+
 
