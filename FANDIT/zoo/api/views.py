@@ -13,7 +13,9 @@ class ZooViewSet(ModelViewSet):
     filter_backends= [OrderingFilter]
     ordering= ['zoo_id', 'animal_id']
 
-  
+  #  def list(sel, queryset):
+ #       for zoo in zoo_id:
+   #         registro= AnimalRegistration.objects.count(zoo_id= zoo)
 
 
         

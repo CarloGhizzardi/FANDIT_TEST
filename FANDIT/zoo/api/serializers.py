@@ -14,7 +14,7 @@ class AnimalRegistrationSerializer(serializers.ModelSerializer):
 #muestre los datos del zoo y los animales su cantidad y ordenados por categoria
 
     zoo_id= ZooSerializer()
-    animal_id= AnimalSerializer('scientific_name')
+    animal_id= AnimalSerializer()
     
 
 
