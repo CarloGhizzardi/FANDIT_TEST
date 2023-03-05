@@ -7,34 +7,23 @@ class ZooSerializer(serializers.ModelSerializer):
     class Meta:
         model= Zoo
         fields= ['name', 'city', 'country', 'surface', 'budget']
+      
 
 
 class AnimalRegistrationSerializer(serializers.ModelSerializer):
-
-#muestre los datos del zoo y los animales su cantidad y ordenados por categoria
-
     zoo_id= ZooSerializer()
     animal_id= AnimalSerializer()
-    
+    class Meta:      
+        model= AnimalRegistration
+        fields= ['zoo_id','animal_id','quantity']
 
 
-    #species=serializers.SerializerMethodField()
+class ZooRegisterSerializer(serializers.ModelSerializer):
+    zoo_id= ZooSerializer()
+    animal_id= AnimalSerializer()
 
     class Meta:      
         model= AnimalRegistration
-        fields= ['zoo_id', 'animal_id']
+        fields= ['zoo_id', 'animal_id', 'quantity']
 
-    
-
-
-
-
-
-
-
-    #def to_representation(self, instance):
-       # response = super().to_representation(instance)
-        #response['animal_id', 'family_id'] = AlbumSerializer(instance.album).data
-        #return response    
-
-    
+        
