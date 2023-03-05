@@ -15,7 +15,7 @@ class Zoo(models.Model):
         return self.name
 
 class AnimalRegistration(models.Model):
-    zoo_id= models.ForeignKey(Zoo,related_name='zoo', on_delete= models.CASCADE)
+    zoo_id= models.ForeignKey(Zoo, related_name='zoo', on_delete= models.CASCADE)
     animal_id= models.ForeignKey(Animal, on_delete= models.CASCADE)
     
     class Meta:

@@ -15,14 +15,14 @@ class AnimalRegistrationSerializer(serializers.ModelSerializer):
 
     zoo_id= ZooSerializer()
     animal_id= AnimalSerializer('scientific_name')
-    family_id= FamilySerializer()
+    
 
 
     #species=serializers.SerializerMethodField()
 
     class Meta:      
         model= AnimalRegistration
-        fields= ['zoo_id', 'animal_id', 'family_id']
+        fields= ['zoo_id', 'animal_id']
 
     
 
