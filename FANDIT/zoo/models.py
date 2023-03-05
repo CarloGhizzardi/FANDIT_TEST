@@ -17,9 +17,9 @@ class Zoo(models.Model):
 class AnimalRegistration(models.Model):
     zoo_id= models.ForeignKey(Zoo,related_name='zoo', on_delete= models.CASCADE)
     animal_id= models.ForeignKey(Animal, on_delete= models.CASCADE)
-    family_id= models.ForeignKey(Family, on_delete= models.CASCADE)
+    
     class Meta:
-        ordering = ["family_id"]
+        ordering = ["zoo_id"]
 
 
 
