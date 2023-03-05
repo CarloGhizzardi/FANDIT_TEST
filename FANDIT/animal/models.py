@@ -10,7 +10,7 @@ class Animal(models.Model):
     in_extinction= models.BooleanField(default= False, null= False)
     
     def __str__(self):
-        return self.common_name
+        return self.scientific_name
 
         
 
