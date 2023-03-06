@@ -64,3 +64,4 @@ class ZooSerializerPut(serializers.ModelSerializer):
         instance.surface = validated_data.get('surface', instance.surface)
         instance.budget = validated_data.get('budget', instance.budget)
 
+

@@ -50,6 +50,5 @@ urlpatterns = [
     path('animal/', include(router_animal.urls)),
     path('zooViewSets/', include(router_zoos.urls)),
     path('zoo/api', ZooGetView.as_view()),
-   
-    
+       
 ]
