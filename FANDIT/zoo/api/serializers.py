@@ -22,7 +22,7 @@ class ZooSerializerGet(serializers.ModelSerializer):
     animals= AnimalsSerializers(read_only=True, many=True) 
     class Meta:
         model = Zoo
-        fields = ['name', 'city', 'country', 'surface', 'budget', 'animals']    
+        fields = ['name', 'city', 'country', 'surface', 'budget', 'animals']
 
 
 
