@@ -33,7 +33,34 @@ class ZooSerializerPost(serializers.ModelSerializer):
     class Meta:
         model= Zoo
         fields= ['name', 'city', 'country', 'surface', 'budget', 'animals']
+
+        def create(self, validated_data):
+            animals_data= validated_data.pop('animal')
+            zoo= Zoo.objects.create(**validated_data)
+            for animal_data in animals_data:
+                Animals.objects.create(zoo=zoo, **animal_data)
+            return zoo
         
 
 
-        
+
+class ZooSerializerPut(serializers.ModelSerializer):
+    class Meta:
+        model = Zoo
+        fields = ['id', 'name', 'city', 'country', 'surface', 'budget', 'animals']
+        read_only_fields = ['id', 'animals']
+
+    def create(self, validated_data):
+        animals_data = validated_data.pop('animals')
+        zoo = Zoo.objects.create(**validated_data)
+        for animal_data in animals_data:
+            zoo.animals.add(animal_data)
+        return zoo
+
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.city = validated_data.get('city', instance.city)
+        instance.country = validated_data.get('country', instance.country)
+        instance.surface = validated_data.get('surface', instance.surface)
+        instance.budget = validated_data.get('budget', instance.budget)
+

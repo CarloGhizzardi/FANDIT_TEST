@@ -1,0 +1,62 @@
+[
+{
+    "model": "animal.animal",
+    "pk": 1,
+    "fields": {
+        "common_name": "Leon",
+        "scientific_name": "Panthera Leo",
+        "family_id": 1,
+        "in_extinction": false
+    }
+},
+{
+    "model": "animal.animal",
+    "pk": 2,
+    "fields": {
+        "common_name": "Hipopotamo",
+        "scientific_name": "Hippopotamus amphibius",
+        "family_id": 2,
+        "in_extinction": false
+    }
+},
+{
+    "model": "animal.animal",
+    "pk": 3,
+    "fields": {
+        "common_name": "Panda",
+        "scientific_name": "Ailuropoda melanoleuca",
+        "family_id": 3,
+        "in_extinction": false
+    }
+},
+{
+    "model": "animal.animal",
+    "pk": 4,
+    "fields": {
+        "common_name": "Lobo Iberico",
+        "scientific_name": "Canis lupus signatus",
+        "family_id": 4,
+        "in_extinction": false
+    }
+},
+{
+    "model": "animal.animal",
+    "pk": 5,
+    "fields": {
+        "common_name": "Mapache",
+        "scientific_name": "Procyon",
+        "family_id": 5,
+        "in_extinction": false
+    }
+},
+{
+    "model": "animal.animal",
+    "pk": 6,
+    "fields": {
+        "common_name": "ardilla",
+        "scientific_name": "ardilla",
+        "family_id": 1,
+        "in_extinction": false
+    }
+}
+]

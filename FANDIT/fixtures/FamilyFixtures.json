@@ -1,0 +1,51 @@
+[
+{
+    "model": "family.family",
+    "pk": 1,
+    "fields": {
+        "name": "Felinos"
+    }
+},
+{
+    "model": "family.family",
+    "pk": 2,
+    "fields": {
+        "name": "Hippopotamidae"
+    }
+},
+{
+    "model": "family.family",
+    "pk": 3,
+    "fields": {
+        "name": "Ursidae"
+    }
+},
+{
+    "model": "family.family",
+    "pk": 4,
+    "fields": {
+        "name": "Canidae"
+    }
+},
+{
+    "model": "family.family",
+    "pk": 5,
+    "fields": {
+        "name": "Procyonidae"
+    }
+},
+{
+    "model": "family.family",
+    "pk": 6,
+    "fields": {
+        "name": "string"
+    }
+},
+{
+    "model": "family.family",
+    "pk": 7,
+    "fields": {
+        "name": "marsupiales"
+    }
+}
+]

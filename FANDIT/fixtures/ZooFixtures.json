@@ -1,0 +1,30 @@
+[
+{
+    "model": "zoo.zoo",
+    "pk": 8,
+    "fields": {
+        "name": "Barcelona zoo",
+        "city": "Barcelona",
+        "country": "Espa±a",
+        "surface": "10000.00",
+        "budget": "10000000.00",
+        "animals": [
+            1,
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "zoo.zoo",
+    "pk": 10,
+    "fields": {
+        "name": "Valencia spa Zoo",
+        "city": "Valencia",
+        "country": "Spain",
+        "surface": "50000.00",
+        "budget": "20000000.00",
+        "animals": []
+    }
+}
+]
