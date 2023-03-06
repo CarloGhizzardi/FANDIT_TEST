@@ -17,6 +17,8 @@ class ZooGetView(APIView):
     
 
 
+
+
 #class ZooView(ModelViewSet):
 #    pass
 #    serializer_class= AnimalRegistrationSerializer
@@ -50,13 +52,7 @@ class ZooGetView(APIView):
 #        return Response(serializer.errors, status= status.HTTP_400_BAD_REQUEST)
 
 
-#class ZooShowView(APIView):
- #   def get(self, request):
- #       registros= AnimalRegistration.objects.all()
- #       serializer= AnimalRegistrationSerializer(registros, many=True)
- #       filter_backends= [OrderingFilter]
- #       ordering= ['zoo_id', 'animal_id']
- #       return Response(serializer.data)
+
 
 
 
