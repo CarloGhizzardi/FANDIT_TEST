@@ -22,6 +22,9 @@ class AnimalRegistration(models.Model):
     class Meta:
         ordering = ["zoo_id"]
 
+    def __str__(self):
+        return 'registro de animales'
+        
 
 
 
