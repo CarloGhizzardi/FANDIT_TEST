@@ -1,5 +1,5 @@
 from django.contrib import admin
-from zoo.models import Zoo, AnimalRegistration
+from zoo.models import Zoo 
 from animal.models import Animal
 from family.models import Family
 
@@ -7,13 +7,12 @@ from family.models import Family
 
 
 
-class AnimalRegistrationInline(admin.TabularInline):
-    model = AnimalRegistration
+
     
  
 
 class ZooAdmin(admin.ModelAdmin):
-    inlines=[AnimalRegistrationInline]
+    
     list_display = ['name', 'city', 'country']
 
 
