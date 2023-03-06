@@ -19,8 +19,8 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from family.api.routers import router_family
 from animal.api.routers import router_animal
-#from zoo.api.routers import router_zoo
-from zoo.api.views import ZooRegisterView, ZooShowView
+from zoo.api.views import ZooGetView
+ 
 
 
 
@@ -47,8 +47,7 @@ urlpatterns = [
     path('user/', include('users.api.routers')),
     path('family/', include(router_family.urls)),
     path('animal/', include(router_animal.urls)),
-   # path('zoo/', include(router_zoo.urls)),
-    path('zoo/crud/post/', ZooRegisterView.as_view()),
-    path('zoo/crud/get/', ZooShowView.as_view()),
+    path('zoo/get', ZooGetView.as_view()),
+   
     
 ]

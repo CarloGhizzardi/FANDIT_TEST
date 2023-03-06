@@ -4,11 +4,17 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response 
 from rest_framework.filters import OrderingFilter
 from zoo.models import Zoo
-from zoo.api.serializers import ZooSerializer
+from zoo.api.serializers import ZooSerializer, ZooSerializerGet
 
 
-
-
+class ZooGetView(APIView):
+    def get(self, request):
+        zoo= Zoo.objects.all()
+        serializer= ZooSerializerGet(zoo, many=True )
+        filter_backends= [OrderingFilter]
+        ordering= ['zoo_id', 'animal_id']
+        return Response(serializer.data)
+    
 
 
 #class ZooView(ModelViewSet):
@@ -21,16 +27,16 @@ from zoo.api.serializers import ZooSerializer
 
 
 
-class ZooRegisterView(APIView):
-    def post(self, request, format=None):
-        serializer = ZooSerializer(data=request.data)
-        if serializer.is_valid():
-            zoo = serializer.save()
-            animal_id = request.data.get('animal_id')
-            quantity = request.data.get('quantity')
-            zoo_registration = AnimalRegistration.objects.create(zoo_id=zoo, animal_id=animal_id, quantity=quantity)
-            return Response({'status': 'success'})
-        return Response(serializer.errors, status=400)
+#class ZooRegisterView(APIView):
+ #   def post(self, request, format=None):
+  #      serializer = ZooSerializer(data=request.data)
+   #     if serializer.is_valid():
+    #        zoo = serializer.save()
+     #       animal_id = request.data.get('animal_id')
+      #      quantity = request.data.get('quantity')
+    #        zoo_registration = AnimalRegistration.objects.create(zoo_id=zoo, animal_id=animal_id, quantity=quantity)
+     #       return Response({'status': 'success'})
+      #  return Response(serializer.errors, status=400)
 
 
 
@@ -44,13 +50,13 @@ class ZooRegisterView(APIView):
 #        return Response(serializer.errors, status= status.HTTP_400_BAD_REQUEST)
 
 
-class ZooShowView(APIView):
-    def get(self, request):
-        registros= AnimalRegistration.objects.all()
-        serializer= AnimalRegistrationSerializer(registros, many=True)
-        filter_backends= [OrderingFilter]
-        ordering= ['zoo_id', 'animal_id']
-        return Response(serializer.data)
+#class ZooShowView(APIView):
+ #   def get(self, request):
+ #       registros= AnimalRegistration.objects.all()
+ #       serializer= AnimalRegistrationSerializer(registros, many=True)
+ #       filter_backends= [OrderingFilter]
+ #       ordering= ['zoo_id', 'animal_id']
+ #       return Response(serializer.data)
 
 
 

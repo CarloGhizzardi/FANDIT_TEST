@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
-from zoo.api.views import ZooView
+from zoo.api.views import ZooGetView
 
-router_zoo= DefaultRouter()
+#router_zoos= DefaultRouter()
 
-router_zoo.register(prefix= 'zoo', basename= 'zoo', viewset=ZooView)
+#router_zoos.register(prefix= 'zoo', basename='zoo', viewset=ZooGetView)
