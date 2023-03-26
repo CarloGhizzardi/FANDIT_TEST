@@ -24,4 +24,4 @@ class ZooAnimal(models.Model):
         verbose_name_plural= 'animales Zoos'
 
     def __str__(self):
-        return str(self.id) + '-' + self.animal_id.scientific_name
+        return str(self.id)
