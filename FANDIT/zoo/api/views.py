@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.filters import OrderingFilter
 from zoo.models import Zoo
 from zoo.api.serializers import ZooSerializer, ZooSerializerGet, ZooSerializerPost, ZooSerializerPut
+from family.models import Family
 
 
 class ZooGetView(APIView):
@@ -14,7 +15,7 @@ class ZooGetView(APIView):
         zoo= Zoo.objects.all()
         serializer= ZooSerializerGet(zoo, many=True )
         filter_backends= [OrderingFilter]
-        ordering= ['zoo_id', 'animal_id']
+        ordering= ['family_id','animal_id']
         return Response(serializer.data)
 
 

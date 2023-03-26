@@ -1,7 +1,9 @@
 from rest_framework import serializers
+from rest_framework.filters import OrderingFilter
 from zoo.models import Zoo 
 from animal.api.serializers import AnimalSerializer, AnimalZooSerializer
 from animal.models import Animal
+from family.models import Family
 
 
 
@@ -23,6 +25,7 @@ class ZooSerializerGet(serializers.ModelSerializer):
     class Meta:
         model = Zoo
         fields = ['name', 'city', 'country', 'surface', 'budget', 'animals']
+        ordering = ['family_id']
 
 
 
@@ -31,14 +34,14 @@ class ZooSerializerPost(serializers.ModelSerializer):
     animals= AnimalZooSerializer()
 
     class Meta:
-        model= Zoo
+        model= Zoo, Animal
         fields= ['name', 'city', 'country', 'surface', 'budget', 'animals']
 
         def create(self, validated_data):
             animals_data= validated_data.pop('animal')
             zoo= Zoo.objects.create(**validated_data)
             for animal_data in animals_data:
-                Animals.objects.create(zoo=zoo, **animal_data)
+                Animal.objects.create(zoo=zoo, **animal_data)
             return zoo
         
 

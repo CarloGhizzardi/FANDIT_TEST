@@ -9,13 +9,12 @@ from family.models import Family
 
 
     
- 
 
+@admin.register(Zoo)
 class ZooAdmin(admin.ModelAdmin):
-    
-    list_display = ['name', 'city', 'country']
+    pass
 
 
-admin.site.register(Zoo, ZooAdmin)
+
 
 

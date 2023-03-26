@@ -16,3 +16,5 @@ class Zoo(models.Model):
         return self.name
 
 
+class ZooAnimal(models.Model):
+    
